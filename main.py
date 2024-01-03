@@ -59,6 +59,7 @@ y = np.array(test_predictions).flatten()
 
 pos_neg = [0, 0]
 labels = ["Positive", "Negative"]
+colours = ["darkseagreen", "crimson"]
 
 for prediction in y:
     if prediction > 0:
@@ -66,7 +67,6 @@ for prediction in y:
     else:
         pos_neg[1] -= prediction
 
-plt.pie(pos_neg, labels=labels)
-
+plt.pie(pos_neg, labels=labels, colors=colours, autopct='%1.1f%%', startangle=90)
 
 plt.show()
