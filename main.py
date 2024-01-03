@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 train_data, validation_data, test_data = tfds.load(
     name="imdb_reviews",
-    split=('train[:60%]', 'train[60%:]', 'test'),
+    split=("train[:60%]", "train[60%:]", "test"),
     as_supervised=True)
 
 embedding = "https://tfhub.dev/google/nnlm-en-dim50/2" 
@@ -18,7 +18,7 @@ hub_layer = hub.KerasLayer(embedding, input_shape=[],
 
 model = tf.keras.Sequential([
     hub_layer, #first layer, converts text to vector
-    tf.keras.layers.Dense(16, activation='relu'),#16 hidden neurons
+    tf.keras.layers.Dense(16, activation="relu"),#16 hidden neurons
     tf.keras.layers.Dense(1) #one output neuron
 ])
 
